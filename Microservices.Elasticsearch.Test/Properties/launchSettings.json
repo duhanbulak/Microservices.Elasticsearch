@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Microservices.Elasticsearch.Test": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ELASTIC_URI": "http://localhost:13030",
+        "LOG_INDEX_FORMAT": "elasticmicroservice-{0:yyyy.MM.dd}"
+      }
+    }
+  }
+}
