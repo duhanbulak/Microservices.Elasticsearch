@@ -27,7 +27,7 @@ namespace Microservices.Elasticsearch.Test
 
         private static void ElasticHelperTestMethod()
         {
-            IndexResponse indexResponse = ElasticHelperAccessor<ExamplePersonModel>.AddModelToElastic(new ExamplePersonModel()
+            IndexResponse indexResponse = ElasticExamplePersonAccessor.AddModelToElastic(new ExamplePersonModel()
             {
                 Id = 1,
                 Name = "Duhan Taha",
@@ -53,7 +53,7 @@ namespace Microservices.Elasticsearch.Test
                 }
             }
 
-            BulkResponse bulkResponse = ElasticHelperAccessor<ExamplePersonModel>.AddModelListToElastic(new List<ExamplePersonModel>()
+            BulkResponse bulkResponse = ElasticExamplePersonAccessor.AddModelListToElastic(new List<ExamplePersonModel>()
             {
                 new ExamplePersonModel()
                 {
@@ -102,7 +102,7 @@ namespace Microservices.Elasticsearch.Test
             }
 
 
-            DeleteResponse deleteResponse = ElasticHelperAccessor<ExamplePersonModel>.DeleteModelToElastic(typeof(ExamplePersonModel).Name.ToLower(), "5");
+            DeleteResponse deleteResponse = ElasticExamplePersonAccessor.DeleteModelToElastic(typeof(ExamplePersonModel).Name.ToLower(), "5");
 
             if (deleteResponse.IsValid || deleteResponse.Result == Result.Deleted)
             {
